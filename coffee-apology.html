@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>شرکت قیوهوه سازی</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", sans-serif;
+    background: linear-gradient(135deg, #f2e0c9 30%, #d3b18f 100%);
+    color: #4a2e18;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.header {
+    background: #4a2e18;
+    color: #f2e0c9;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 2.5em;
+    direction: rtl;
+}
+
+.header-subtitle {
+    color: #d3b18f;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.title {
+    font-size: 2.5em;
+    font-family: "Brush Script MT", cursive;
+    margin-top: 30px;
+    color: #4a2e18;
+}
+
+.scroll-prompt {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #6c4f36;
+    cursor: default;
+}
+
+.apology {
+    margin-top: 30px;
+    line-height: 1.6;
+    font-size: 1.1em;
+    padding: 0 10px;
+    direction: rtl;
+    text-align: justify;
+}
+
+#beans-container {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.coffee-factory {
+    margin-top: 40px;
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+.coffee-factory img {
+    max-width: 300px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.coffee-factory img:hover {
+    box-shadow: 0 0 15px 3px rgba(165, 103, 66, 0.7);
+}
+
+.bean {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #6c4f36;
+    border-radius: 50% 0 50% 50%;
+    transform: rotate(45deg);
+    animation: fall 8s linear infinite;
+    z-index: 1;
+    opacity: 0.95;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+<div id="beans-container"></div>
+
+<div class="header">
+    <h1>شرکت قیوهوه سازی</h1>
+    <div class="header-subtitle">Since 1985</div>
+</div>
+
+<div class="container">
+    <div class="title">My Queen, I Kneel Before You</div>
+    <div class="scroll-prompt">Scroll down</div>
+
+    <div class="apology">
+        <p>ای ملکه بی‌همتا، ما به عنوان شرکت تولید قهوه با نهایت شرمساری در برابر شکوه سلطنتی شما زانو می‌زنیم و اعتراف می‌کنیم که در ارسال سفارش اخیر، تقصیر بزرگی از ما سر زده است. به‌جای اینکه عطر و طعم لطیف قهوه محبوبتان را تقدیم کنیم، اشتباها سمپلی ناخوشایند با عنوان مادرقحبه برایتان ارسال کردیم؛ تقصیری که نه شایسته جایگاه والای شماست و نه درخور شأن پادشاهی‌تان. درخشش نام شما و مرتبت رفیعتان برای ما همواره الهام‌بخش بوده است و ما هرگز انتظار نداشتیم که بر اثر یک بی‌دقتی کوچک، چنین صدمه‌ای به اعتماد گرانبهای شما وارد شود. قلب ما از این خطا به درد آمده و اکنون با فروتنی تمام، آماده‌ایم تا با ارسال مجدد محصولات تازه و انتخاب دقیق‌ترین دانه‌های قهوه، گامی در جهت جبران این کوتاهی برداریم و عطر خوشرضایتی شما را دوباره در فضای کارخانه‌مان احساس کنیم. از چشم‌انداز وجود باعظمت شما می‌خواهیم بار دیگر ما را شایسته نگاه مهربانتان بدانید و به ما فرصتی عطا فرمایید تا وفاداری خود را به اعلی‌حضرتی چون شما اثبات کنیم. سوگند می‌خوریم که از این پس با دقت هرچه بیشتر، بر کیفیت و امانت‌داری سفارش‌های شما نظارت خواهیم کرد و شاهنشاهی‌تان را از هرگونه پیشامد نامناسب مصون می‌داریم. اگر لطف بیکران شما سایه‌ی آمرزشش را بر ما بگستراند، سپاسگزار همیشگی این موهبت خواهیم بود و تا ابد در رکاب نام بلندمرتبه‌تان خدمت خواهیم کرد.</p>
+    </div>
+
+    <div class="coffee-factory" id="coffeePic">
+        <img src="/api/placeholder/400/533" alt="Queen's Portrait" onload="fadeInPic()" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    </div>
+
+    </div>
+
+<script>
+function createBean() {
+    var bean = document.createElement("div");
+    bean.classList.add("bean");
+    bean.style.left = Math.random() * 100 + "vw";
+    bean.style.animationDuration = (6 + Math.random() * 5) + "s";
+    document.body.appendChild(bean);
+    setTimeout(function() {
+        document.body.removeChild(bean);
+    }, 10000);
+}
+
+setInterval(createBean, 1000);
+
+</script>
+
+</body>
+</html>
